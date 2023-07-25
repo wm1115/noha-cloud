@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: admin
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://localhost:8848
+
+server:
+  port: 8002
