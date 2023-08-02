@@ -11,6 +11,6 @@ public class AdminController {
 
     @GetMapping(value = "/nacos/getString/{id}")
     public String getString(@PathVariable("id") Integer id) {
-        return "远程调用成功 id为"+id;
+        return "远程调用成功 id为" + id;
     }
 }

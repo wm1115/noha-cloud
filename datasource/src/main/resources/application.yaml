@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: datasource
+  datasource:
+    druid:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driverClassName: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/hh  #?????
+      username: root
+      password:
+      names: first,second
+      first:
+        url: jdbc:mysql://localhost:3306/ds1
+        username: root
+        password:
+      second:
+        url: jdbc:mysql://localhost:3306/ds2
+        username: root
+        password:
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
