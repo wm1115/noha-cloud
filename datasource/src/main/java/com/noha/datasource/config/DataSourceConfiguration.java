@@ -1,5 +1,6 @@
 package com.noha.datasource.config;
 
+import com.alibaba.druid.pool.DruidDataSource;
 import com.noha.datasource.dysource.DynamicDataSource;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -26,7 +27,7 @@ public class DataSourceConfiguration {
     @Bean
     @ConfigurationProperties("spring.datasource.druid")
     public DataSource defaultDataSource() {
-        return DataSourceBuilder.create().build();
+        return new DruidDataSource();
     }
 
 

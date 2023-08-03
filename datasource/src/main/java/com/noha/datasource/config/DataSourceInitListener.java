@@ -55,7 +55,7 @@ public class DataSourceInitListener implements ApplicationListener<ContextRefres
             for (String dsPrefix : dataSourceNames.split(",")) {
                 Iterable<ConfigurationPropertySource> sources = ConfigurationPropertySources.get(environment);
                 Binder binder = new Binder(sources);
-                BindResult<Properties> bindResult = binder.bind("spring.datasource." + dsPrefix, Properties.class);
+                BindResult<Properties> bindResult = binder.bind("spring.datasource.druid." + dsPrefix, Properties.class);
                 Properties properties = bindResult.get();
                 Map<String, Object> dsMap = new HashMap<>();
                 dsMap.put("type", properties.getProperty("type"));
