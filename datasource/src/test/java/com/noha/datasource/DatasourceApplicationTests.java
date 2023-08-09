@@ -7,11 +7,17 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class DatasourceApplicationTests {
+
+
     @Autowired(required=true)
     Dao dao;
     @Test
+//    @TargetDataSource(name = "first")
     void contextLoads() {
-        dao.getNum();
+        System.out.println(dao.getNum());
     }
+
+
+
 
 }

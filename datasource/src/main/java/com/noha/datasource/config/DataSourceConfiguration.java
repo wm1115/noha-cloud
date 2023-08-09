@@ -4,7 +4,6 @@ import com.alibaba.druid.pool.DruidDataSource;
 import com.noha.datasource.dysource.DynamicDataSource;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -43,11 +42,10 @@ public class DataSourceConfiguration {
      * 初始化DynamicDataSource，将主数据源写入targetDataSources
      *
      * @param defaultDataSource
-     * @param secondDataSource
      * @return
      */
     @Bean
-    public DynamicDataSource dataSource(DataSource defaultDataSource, DataSource secondDataSource) {
+    public DynamicDataSource dataSource(DataSource defaultDataSource) {
         DynamicDataSource dynamicDataSource = new DynamicDataSource();
         Map<Object, Object> targetDataSources = new HashMap<>(1);
         targetDataSources.put("defaultDataSource", defaultDataSource);

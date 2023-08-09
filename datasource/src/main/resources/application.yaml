@@ -5,20 +5,20 @@ spring:
     druid:
       type: com.alibaba.druid.pool.DruidDataSource
       driverClassName: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/hh  #?????
+      url: jdbc:mysql://127.0.0.1:3306/hh
       username: root
       password:
       names: first,second
       first:
         type: com.alibaba.druid.pool.DruidDataSource
         driverClassName: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/ds1
+        url: jdbc:mysql://127.0.0.1:3306/ds1
         username: root
         password:
       second:
         type: com.alibaba.druid.pool.DruidDataSource
         driverClassName: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/ds2
+        url: jdbc:mysql://127.0.0.1:3306/ds2
         username: root
         password:
 

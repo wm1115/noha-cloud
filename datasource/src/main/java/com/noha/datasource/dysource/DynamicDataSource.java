@@ -9,6 +9,7 @@ import java.util.Map;
 public class DynamicDataSource extends AbstractRoutingDataSource {
 
 
+
     @Override
     protected Object determineCurrentLookupKey() {
         return DyContextHolder.getDataSource();
@@ -26,6 +27,7 @@ public class DynamicDataSource extends AbstractRoutingDataSource {
         Map<Object, Object> targetDataSources = (Map<Object, Object>) getTargetDataSources(this);
         targetDataSources.put(key, dataSource);
         this.setTargetDataSources(targetDataSources);
+        this.afterPropertiesSet();
 
     }
 

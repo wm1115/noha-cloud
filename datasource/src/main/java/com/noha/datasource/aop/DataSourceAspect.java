@@ -3,6 +3,7 @@ package com.noha.datasource.aop;
 
 import com.noha.datasource.annotation.TargetDataSource;
 import com.noha.datasource.dysource.DyContextHolder;
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -16,6 +17,7 @@ import java.lang.reflect.Method;
 
 @Aspect
 @Component
+@Slf4j
 public class DataSourceAspect implements Ordered {
 
 
@@ -36,6 +38,7 @@ public class DataSourceAspect implements Ordered {
         try {
             return point.proceed();
         } finally {
+            log.info("清除线程数据源，后续使用默认数据源");
             DyContextHolder.clearDataSource();
         }
     }
